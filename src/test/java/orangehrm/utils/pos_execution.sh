@@ -16,4 +16,4 @@ echo "Creating new folder: $folder_path"
 mkdir -p "$folder_path"
 
 echo "Move the generated from: $target_path to the report folder: $folder_path"
-mv  performance*  "$folder_path"
+mv $target_path/performance*/* "$folder_path"

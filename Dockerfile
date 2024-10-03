@@ -12,4 +12,7 @@ RUN apt-get update && \
 
 RUN mvn clean install
 
+
+CMD ["./src/test/java/orangehrm/utils/execute_gatling.sh"]
+
 #mvn gatling:test -Dgatling.simulationClass=orangehrm.projects.regression.PerformanceRunner
