@@ -9,7 +9,7 @@ public class Admin {
     public static ChainBuilder addJobTitle(String randomNumber) {
         return exec(
                 http("Admin - Add Job Title")
-                        .post("/web/index.php/api/v2/admin/job-titles")
+                        .post("/api/v2/admin/job-titles")
                         .header("Cookies", "#{setCookieHeader}")
                         .formParam("title", "My Job Title " + randomNumber)
                         .formParam("description", "My description")
@@ -27,7 +27,7 @@ public class Admin {
     public static ChainBuilder deleteJobTitle(String id) {
         return exec(
                 http("Admin - Delete Job Title")
-                        .delete("/web/index.php/api/v2/admin/job-titles")
+                        .delete("/api/v2/admin/job-titles")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("{ \"ids\": [\"" + id + "\"] }"))
@@ -42,7 +42,7 @@ public class Admin {
     public static ChainBuilder emailConfiguration() {
         return exec(
                 http("Admin - Email Configuration")
-                        .put("/web/index.php/api/v2/admin/email-configuration")
+                        .put("/api/v2/admin/email-configuration")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody(
@@ -68,7 +68,7 @@ public class Admin {
     public static ChainBuilder changeLanguageToEnglish() {
         return exec(
                 http("Admin - Change Language to English")
-                        .put("/web/index.php/api/v2/admin/localization")
+                        .put("/api/v2/admin/localization")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody(
@@ -88,7 +88,7 @@ public class Admin {
     public static ChainBuilder changeCorpBrandToDefault() {
         return exec(
                 http("Admin - Change Corp Brand to Default")
-                        .put("/web/index.php/api/v2/admin/theme")
+                        .put("/api/v2/admin/theme")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody(
@@ -120,7 +120,7 @@ public class Admin {
     public static ChainBuilder activateModules() {
         return exec(
                 http("Admin - Activate Modules")
-                        .put("/web/index.php/api/v2/admin/modules")
+                        .put("/api/v2/admin/modules")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody(

@@ -10,7 +10,7 @@ public class Performance {
     public static ChainBuilder addKpi(String randomNumber) {
         return exec(
                 http("Performance - Add KPI")
-                        .post("/web/index.php/api/v2/performance/kpis")
+                        .post("/api/v2/performance/kpis")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("""
@@ -35,7 +35,7 @@ public class Performance {
     public static ChainBuilder deleteKpi(String id) {
         return exec(
                 http("Performance - Delete Kpi")
-                        .delete("/web/index.php/api/v2/performance/kpis")
+                        .delete("/api/v2/performance/kpis")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("{ \"ids\": [" + id + "] }"))

@@ -10,7 +10,7 @@ public class Recruitment {
     public static ChainBuilder getJobTitles =
             exec(
                     http("Recruitment - Get Job Titles")
-                            .get("/web/index.php/api/v2/admin/job-titles?limit=0")
+                            .get("/api/v2/admin/job-titles?limit=0")
                             .header("Cookies", "#{setCookieHeader}")
                             .check(status().is(200))
             );

@@ -23,7 +23,7 @@ public class Login {
         exec(flushCookieJar())
         .exec(
                     http("Get the CSRF token for Login")
-                            .get("/web/index.php/auth/login")
+                            .get("/auth/login")
                             .check(status().is(200))
                             .check(bodyString().saveAs("responseBody"))
             ).exec(session -> {
@@ -36,7 +36,7 @@ public class Login {
     public static ChainBuilder loginAsAdmin =
             exec(
                     http("Home - Login as Admin")
-                            .post("/web/index.php/auth/validate")
+                            .post("/auth/validate")
                             .formParam("_token", "#{authToken}")
                             .formParam("username", "Admin")
                             .formParam("password", "admin123")

@@ -10,7 +10,7 @@ public class Leave {
     public static ChainBuilder addLeaveType(String randomNumber) {
         return exec(
                 http("Leave - Add Leave Type")
-                        .post("/web/index.php/api/v2/leave/leave-types")
+                        .post("/api/v2/leave/leave-types")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("""
@@ -32,7 +32,7 @@ public class Leave {
     public static ChainBuilder deleteLeaveType(String id) {
         return exec(
                 http("Leave - Delete Leave Type")
-                        .delete("/web/index.php/api/v2/leave/leave-types")
+                        .delete("/api/v2/leave/leave-types")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("{ \"ids\": [" + id + "] }"))

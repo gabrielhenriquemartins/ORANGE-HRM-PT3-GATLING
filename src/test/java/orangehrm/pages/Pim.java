@@ -10,7 +10,7 @@ public class Pim {
     public static ChainBuilder addEmployee(String randomNumber) {
         return exec(
                 http("PIM - Add Employee")
-                        .post("/web/index.php/api/v2/pim/employees")
+                        .post("/api/v2/pim/employees")
                         .header("Cookies", "#{setCookieHeader}")
                         .formParam("employeeId", session -> session.getString("randomNumber"))
                         .formParam("firstName", session -> "Gabriel " + session.getString("randomNumber"))
@@ -29,7 +29,7 @@ public class Pim {
     public static ChainBuilder deleteEmployee(String id) {
         return exec(
                 http("PIM - Delete Employee")
-                        .delete("/web/index.php/api/v2/pim/employees")
+                        .delete("/api/v2/pim/employees")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("{ \"ids\": [\"" + id + "\"] }"))

@@ -1,4 +1,4 @@
-package orangehrm;
+package orangehrm.projects.regression;
 
 import io.gatling.javaapi.core.*;
 import io.gatling.javaapi.http.*;

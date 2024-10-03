@@ -10,7 +10,7 @@ public class Claim {
     public static ChainBuilder addExpenseType(String randomNumber) {
         return exec(
                 http("Claim - Add Expense Type")
-                        .post("/web/index.php/api/v2/claim/expenses/types")
+                        .post("/api/v2/claim/expenses/types")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("""
@@ -33,7 +33,7 @@ public class Claim {
     public static ChainBuilder deleteExpenseType(String id) {
         return exec(
                 http("Claim - Delete Expense Type")
-                        .delete("/web/index.php/api/v2/claim/expenses/types")
+                        .delete("/api/v2/claim/expenses/types")
                         .header("Cookies", "#{setCookieHeader}")
                         .header("Content-Type", "application/json")
                         .body(StringBody("{ \"ids\": [" + id + "] }"))
